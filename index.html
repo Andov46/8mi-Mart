@@ -3,110 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8-mi Mart</title>
+    <title>Čestitka 8-mi Mart</title>
     <style>
-      /* Главни поставки */
-      body,
-      html {
+      * {
         margin: 0;
         padding: 0;
-        width: 100%;
-        height: 100vh;
-        font-family: "Arial", sans-serif;
-        /* Поставување на твојата слика како позадина */
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
         background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20240204/pngtree-love-valentines-day-background-with-hearts-image_15598675.png");
         background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: hidden;
-      }
-
-      /* Темна прекривка за текстот да биде појасен */
-      body::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.1); /* Многу лесно затемнување */
-        z-index: 0;
-      }
-
-      /* Desktop styles first (or use Mobile-first by reversing this) */
-      .container {
-        display: flex;
-      }
-
-      /* Tablet and Mobile styles */
-      @media (max-width: 768px) {
-        .container {
-          flex-direction: column; /* Stacks items vertically */
-        }
-      }
-
-      .container {
-        width: 200px;
-        position: relative;
-        z-index: 1;
         text-align: center;
-        background: rgba(255, 255, 255, 0.75); /* Полупроѕирен панел */
-        padding: 60px;
-        border-radius: 40px;
-        backdrop-filter: blur(5px); /* Заматување на позадината под панелот */
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        border: 2px solid rgba(255, 255, 255, 0.5);
+        padding: 20px;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 40px 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        width: 100%;
+        max-width: 400px;
       }
 
       h1 {
-        font-size: 50px;
-        color: #d63384;
-        text-transform: uppercase;
-        letter-spacing: 8px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        color: white;
+        font-size: 3rem;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
 
       .btn {
+        display: inline-block;
         background-color: #ff4d6d;
         color: white;
-        border: none;
-        padding: 20px 50px;
-        font-size: 24px;
-        font-weight: bold;
-        border-radius: 60px;
-        cursor: pointer;
-        transition: all 0.3s ease;
         text-decoration: none;
-        display: inline-block;
-        box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
-        text-transform: uppercase;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        transition:
+          transform 0.3s,
+          background-color 0.3s;
+        box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+        margin-bottom: 25px;
+        border: none;
+        cursor: pointer;
       }
 
       .btn:hover {
         background-color: #ff758f;
-        transform: scale(1.1);
-        box-shadow: 0 10px 25px rgba(255, 77, 109, 0.6);
+        transform: scale(1.05);
+      }
+
+      .btn:active {
+        transform: scale(0.95);
+      }
+
+      footer {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+      }
+
+      /* Mobile Responsive prilagodbi */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+        .container {
+          padding: 30px 20px;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>ЗДРАВО</h1>
-      <button class="btn" onclick="nextPage()">КЛИКНИ МЕ</button>
-    </div>
-    <p style="text-align: center;" style="font-family: Arial, Helvetica, sans-serif;">Website by Nexora Digital Agency</p>
+      <h1>Zdravo</h1>
 
-    <script>
-      function nextPage() {
-        alert("Подготви се за изненадувањето! ❤️");
-        // Пренасочување кон страната за најава
-        window.location.href = "najava.html";
-      }
-    </script>
+      <a href="najava.html" class="btn">Klikni Me</a>
+
+      <footer>Website by <strong>Nexora Digital Agency</strong></footer>
+    </div>
   </body>
 </html>
-
-

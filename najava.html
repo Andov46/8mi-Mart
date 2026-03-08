@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="mk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кој си ти?</title>
+    <style>
+      body {
+        background: #ff0077;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      /* Desktop styles first (or use Mobile-first by reversing this) */
+      .container {
+        display: flex;
+      }
+
+      /* Tablet and Mobile styles */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column; /* Stacks items vertically */
+        }
+      }
+
+      .box {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      input {
+        padding: 10px;
+        width: 80%;
+        margin: 10px 0;
+        border: 2px solid #ff4d6d;
+        border-radius: 10px;
+        font-size: 16px;
+      }
+      button {
+        background: #ff4d6d;
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h2>Внеси го твоето име и презиме:</h2>
+      <input type="text" id="ime" placeholder="пр. Зоран Заев" />
+      <br />
+      <button onclick="proveri()">ВЛЕЗИ</button>
+    </div>
+
+    <script>
+      function proveri() {
+        let vneseno = document.getElementById("ime").value.trim().toLowerCase();
+
+        if (
+          vneseno === "frosina cvetanovska" ||
+          vneseno === "фросина цветановска"
+        ) {
+          window.location.href = "frosina.html";
+        } else if (
+          vneseno === "aleksandra cvetanovska" ||
+          vneseno === "александра цветановска"
+        ) {
+          window.location.href = "aleksandra.html";
+        } else if (
+          vneseno === "ljubica ristovska" ||
+          vneseno === "љубица ристовска" ||
+          vneseno === "љубица ристевска" ||
+          vneseno === "ljubica ristevska"
+        ) {
+          window.location.href = "ljubica.html";
+        } else {
+          alert(
+            "Извинете, но ова изненадување не е за вас или сте згрешиле во пишувањето.",
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
